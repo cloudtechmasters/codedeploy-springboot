@@ -1,0 +1,16 @@
+version: 0.2
+ 
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean install 
+artifacts:
+  files:
+    - target/gs-spring-boot-0.1.0.jar
+    - scripts/*.sh
+    - appspec.yml
+  discard-paths: yes
